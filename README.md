@@ -3,6 +3,7 @@ A very simple TODO app written in Python with the guizero library
 
 # requirements
 guizero >= 0.6.2
+python 3.6+
 
 # notes
 This version of the program has been tested only in Ubuntu
