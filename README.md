@@ -9,7 +9,10 @@ tkinter (linux users)
 # notes
 Linux users use sudo apt-get install python3-tk to install tkinter
 
-This version of the program has been tested only in Ubuntu
-After testing on a Windows platform, it has proven to be buggy
+# issues
+Bug with the List casuing it to display twice
+Still working to clean it up for
 
-Still working to clean it up for Windows
+# fixes
+Fixed ListBox Bug
+
