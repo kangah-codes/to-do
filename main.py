@@ -20,8 +20,9 @@ def refreshScreen():
     task.clear()
     for item in database.retrieve_all():
         comp = ['Completed' if item[4] == 'True' else 'Pending']
-        txt = guizero.Text(task, text=f"{item[0]}. {item[1]}            {comp[0]}")
-        task.insert('end', txt.value)
+        #txt = guizero.Text(task, text=f"{item[0]}. {item[1]}            {comp[0]}")
+        #string = f"{item[0]}. {item[1]}            {comp[0]}"
+        task.insert('end', f"{item[0]}. {item[1]}            {comp[0]}")
 
 def main():
     # making entertask a global variable so we can access its value from any method
@@ -66,13 +67,13 @@ def completeTask():
     """
     if getList(task) != None:
         if database.retrieve_task(getList(task))[4] == 'True':
-            print(getList(task))
+            # print(getList(task))
             # if task is already completed, implement a warning
             if guizero.yesno("Illegal action", "Task is already completed, Do you want to remove it instead?"):
                 database.delete_task(getList(task))
                 refreshScreen()
         else:
-            print(getList(task))
+            # print(getList(task))
             if database.complete_task(getList(task)):
                 refreshScreen()
             else:
@@ -108,8 +109,6 @@ def addTask():
             refreshScreen()
         else:
             guizero.warn("Error", "Could not add Task")
-        
-        
 
 def showAll():
     """
@@ -124,8 +123,8 @@ def showAll():
 
     for item in database.retrieve_all():
         comp = ['Completed' if item[4] == 'True' else 'Pending']
-        txt = guizero.Text(task, text=f"{item[0]}. {item[1]}            {comp[0]}")
-        task.insert('end', txt.value)
+        #txt = guizero.Text(task, text=f"{item[0]}. {item[1]}            {comp[0]}")
+        task.insert('end', f"{item[0]}. {item[1]}            {comp[0]}")
 
 def deleteAll():
     """
