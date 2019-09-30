@@ -1,5 +1,6 @@
 # to-do
 A very simple TODO app written in Python with the guizero library
+This app implements a simple sqlite3 database model for storing todos
 
 # requirements
 guizero == 0.6.2
